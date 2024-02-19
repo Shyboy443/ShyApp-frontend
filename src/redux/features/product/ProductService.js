@@ -6,7 +6,7 @@ import axios from "axios";
 
 // Create New Product
 const createProduct = async (formData) => {
-  const response = await axios.post("http://localhost:2000/api/products", formData);
+  const response = await axios.post("https://shy-app-backend.onrender.com/api/products", formData);
   return response.data;
   
 };
@@ -14,27 +14,27 @@ const createProduct = async (formData) => {
 
 // Get All Products
 const getProducts = async () => {
-  const response = await axios.get("http://localhost:2000/api/products");
+  const response = await axios.get("https://shy-app-backend.onrender.com/api/products");
   return response.data;
   
 };
 // Delete a Product
 const deleteProducts = async (id) => {
-  const response = await axios.delete(`http://localhost:2000/api/products/${id}`);
+  const response = await axios.delete(`https://shy-app-backend.onrender.com/api/products/${id}`);
   return response.data;
   
 };
 
 // Get a Product
 const getProduct = async (id) => {
-  const response = await axios.get(`http://localhost:2000/api/products/${id}`);
+  const response = await axios.get(`https://shy-app-backend.onrender.com/api/products/${id}`);
   return response.data;
 };
 
 // Update Product
 
 const updateProducts = async (id, formData) => {
-  const response = await axios.patch(`http://localhost:2000/api/products/${id}`,formData);
+  const response = await axios.patch(`https://shy-app-backend.onrender.com/api/products/${id}`,formData);
   return response.data;
   
 };
