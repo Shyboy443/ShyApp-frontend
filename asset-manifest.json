@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ShyApp-frontend/static/css/main.f7543e4a.css",
+    "main.js": "/ShyApp-frontend/static/js/main.3cd45660.js",
+    "static/media/inv-img.png": "/ShyApp-frontend/static/media/inv-img.88b2acec73355d47e6f0.png",
+    "static/media/loader.gif": "/ShyApp-frontend/static/media/loader.9d11df4bdd0bb34de773.gif",
+    "index.html": "/ShyApp-frontend/index.html",
+    "main.f7543e4a.css.map": "/ShyApp-frontend/static/css/main.f7543e4a.css.map",
+    "main.3cd45660.js.map": "/ShyApp-frontend/static/js/main.3cd45660.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f7543e4a.css",
+    "static/js/main.3cd45660.js"
+  ]
+}
