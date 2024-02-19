@@ -12,11 +12,10 @@ export const validateEmail = (email) => {
 
 export const registerUser = async (userData) => {
   try {
-    const response = await axios.post("https://shy-app-backend.onrender.com/users/register", userData,
-      { withCredentials: true })
+    const response = await axios.post("https://shy-app-backend.onrender.com/api/users/register", userData,{ withCredentials: true })
 
 
-    toast.success("Registered Successfully")
+      toast.success("Registered Successfully")
     return response.data;
 
   } catch (error) {
