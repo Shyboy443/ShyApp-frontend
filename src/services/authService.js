@@ -1,7 +1,9 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-export const BACKEND_URL = process.env.BACKEND_URL
+
+export const BACKEND_URL = 'https://shy-app-backend.onrender.com';
+
 
 export const validateEmail = (email) => {
   return email.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
@@ -12,7 +14,7 @@ export const validateEmail = (email) => {
 
 export const registerUser = async (userData) => {
   try {
-    const response = await axios.post("https://shy-app-backend.onrender.com/api/users/register", userData,{ withCredentials: true })
+    const response = await axios.post(`${BACKEND_URL}/api/users/register`, userData,{ withCredentials: true })
 
 
       toast.success("Registered Successfully")
@@ -33,7 +35,7 @@ export const registerUser = async (userData) => {
 
 export const loginUser = async (userData) => {
   try {
-    const response = await axios.post("https://shy-app-backend.onrender.com/api/users/login", userData,
+    const response = await axios.post(`${BACKEND_URL}/api/users/login`, userData,
     )
     if (response.statusText === "OK") {
 
@@ -53,7 +55,7 @@ export const loginUser = async (userData) => {
 // Logout
 export const logoutUser = async () => {
   try {
-    await axios.get(`https://shy-app-backend.onrender.com/api/users/logout`);
+    await axios.get(`${BACKEND_URL}/api/users/logout`);
   } catch (error) {
     const message =
       (error.response && error.response.data && error.response.data.message) ||
@@ -67,7 +69,7 @@ export const logoutUser = async () => {
 
 export const forgotPassword = async (userData) => {
   try {
-    const response = await axios.post(`https://shy-app-backend.onrender.com/api/users/forgotpassword`, userData);
+    const response = await axios.post(`${BACKEND_URL}/api/users/forgotpassword`, userData);
     toast.success(response.data.message)
   } catch (error) {
     const message =
@@ -81,7 +83,7 @@ export const forgotPassword = async (userData) => {
 // Reset Password
 export const resetPassword = async (userData, resetToken) => {
   try {
-    const response = await axios.put(`https://shy-app-backend.onrender.com/api/users/resetpassword/${resetToken}`, userData);
+    const response = await axios.put(`${BACKEND_URL}/api/users/resetpassword/${resetToken}`, userData);
 
 
     return response.data
@@ -99,7 +101,7 @@ export const resetPassword = async (userData, resetToken) => {
 
 export const getLoginStatus = async (userData, resetToken) => {
   try {
-    const response = await axios.get(`https://shy-app-backend.onrender.com/api/users/loggedin`);
+    const response = await axios.get(`${BACKEND_URL}/api/users/loggedin`);
 
 
     return response.data
@@ -117,7 +119,7 @@ export const getLoginStatus = async (userData, resetToken) => {
 
 export const getUser = async (userData, resetToken) => {
   try {
-    const response = await axios.get(`https://shy-app-backend.onrender.com/api/users/getuser`);
+    const response = await axios.get(`${BACKEND_URL}/api/users/getuser`);
     return response.data
 
   } catch (error) {
@@ -135,7 +137,7 @@ export const getUser = async (userData, resetToken) => {
 
 export const updateUser = async (formData) => {
   try {
-    const response = await axios.patch(`https://shy-app-backend.onrender.com/api/users/updateuser`,formData);
+    const response = await axios.patch(`${BACKEND_URL}/api/users/updateuser`,formData);
     return response.data
 
   } catch (error) {
@@ -150,7 +152,7 @@ export const updateUser = async (formData) => {
 // Change Password
 export const changePassword = async (formData) => {
   try {
-    const response = await axios.patch(`https://shy-app-backend.onrender.com/api/users/changepassword`,formData);
+    const response = await axios.patch(`${BACKEND_URL}/api/users/changepassword`,formData);
     return response.data
 
   } catch (error) {

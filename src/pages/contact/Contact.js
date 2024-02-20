@@ -5,6 +5,7 @@ import { FaEnvelope, FaTwitter, FaPhoneAlt } from "react-icons/fa";
 import { GoLocation } from "react-icons/go"
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { BACKEND_URL } from '../../services/authService';
 const Contact = () => {
 
 
@@ -20,7 +21,7 @@ const Contact = () => {
   const sendEmail = async(e) => {
     e.preventDefault();
     try {
-      const response =  await axios.post(`https://shy-app-backend.onrender.com/api/contactus`,data)
+      const response =  await axios.post(`${BACKEND_URL}/api/contactus`,data)
        setSubject("")
        setMessage("")
        toast.success(response.data.message)
